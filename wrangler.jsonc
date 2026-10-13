@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "cloud-storage-saas",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "SALES_RATE_USD_PER_GB_MONTHLY": "0.030",
+    "COST_RATE_USD_PER_GB_MONTHLY": "0.015",
+    "MIN_TOPUP_USD": "5.00"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cloud_storage_db",
+      "database_id": "REPLACE_WITH_YOUR_D1_DB_ID"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MY_R2_BUCKET",
+      "bucket_name": "cloud-storage-bucket"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
